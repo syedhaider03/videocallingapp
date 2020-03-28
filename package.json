@@ -1,0 +1,50 @@
+{
+  "name": "VideoCallingApp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "react": "16.11.0",
+    "react-native": "0.62.0",
+    "@react-native-community/async-storage": "github:react-native-community/async-storage",
+    "@react-native-community/geolocation": "^2.0.2",
+    "axios": "^0.19.0",
+    "moment": "^2.24.0",
+    "react-native-gesture-handler": "^1.5.2",
+    "react-native-indicators": "^0.17.0",
+    "react-native-iphone-x-helper": "^1.2.1",
+    "react-native-keyboard-aware-scrollview": "^2.0.0",
+    "react-native-phone-input": "^0.2.4",
+    "react-native-picker-select": "^6.5.0",
+    "react-native-reanimated": "^1.4.0",
+    "react-native-responsive-fontsize": "^0.4.1",
+    "react-native-responsive-screen": "^1.3.0",
+    "react-native-screens": "^2.0.0-alpha.22",
+    "react-native-searchable-dropdown": "^1.1.1",
+    "react-native-stars": "^1.1.6",
+    "react-native-status-bar-height": "^2.4.0",
+    "react-navigation": "^4.0.10",
+    "react-navigation-drawer": "^2.3.3",
+    "react-navigation-stack": "^1.10.3",
+    "react-navigation-tabs": "^2.6.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/runtime": "^7.6.2",
+    "@react-native-community/eslint-config": "^0.0.5",
+    "babel-jest": "^24.9.0",
+    "eslint": "^6.5.1",
+    "jest": "^24.9.0",
+    "metro-react-native-babel-preset": "^0.58.0",
+    "react-test-renderer": "16.11.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

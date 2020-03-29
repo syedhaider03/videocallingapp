@@ -3,7 +3,7 @@ import { View, StyleSheet, Image, TouchableOpacity, Text, FlatList, ScrollView }
 
 import Input from '../components/Input/Input';
 import { search, HP, WP, profile, colors } from '../utils/contants';
-import firebase from '../database/firebase';
+import firebaseSDK from '../database/firebase';
 import { Button } from '../components';
 
 class AddUser extends Component {
@@ -13,7 +13,7 @@ class AddUser extends Component {
     }
 
     componentDidMount() {
-        console.warn(firebase.auth())
+        // console.warn(firebaseSDK.database())
         // httpsCallable()
         //     .then(res => {
         //         console.warn('response from firebase ', res)

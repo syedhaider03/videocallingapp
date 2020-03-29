@@ -38,11 +38,6 @@ export default class Dashboard extends Component {
             height={50}
             name={"Create A Group"}
           />
-          <Btn
-            color="#3740FE"
-            title="Logout"
-            onPress={() => this.signOut()}
-          />
         </View>
       )
     }

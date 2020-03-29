@@ -35,14 +35,24 @@ export default class Signup extends Component {
         res.user.updateProfile({
           displayName: this.state.displayName
         })
-        console.log('User registered successfully!')
-        this.setState({
-          isLoading: false,
-          displayName: '',
-          email: '', 
-          password: ''
+        firebase
+        .database()
+        .ref('users/')
+        .push({
+              email:this.state.email,
+              displayName:this.state.displayName
         })
-        this.props.navigation.navigate('Login')
+        .then(res => {
+          console.warn('User registered successfully!')
+          this.setState({
+            isLoading: false,
+            displayName: '',
+            email: '', 
+            password: ''
+          })
+          this.props.navigation.navigate('Login')
+        })
+        .catch(err => alert(err))
       })
       .catch(error => this.setState({ errorMessage: error.message }))      
     }

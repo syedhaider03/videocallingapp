@@ -63,17 +63,17 @@ export function floatPad(num) {
 }
 
 
-// export const =require('../assets/images/.png');
-// export const =require('../assets/images/.png');
-// export const =require('../assets/images/.png');
-// export const =require('../assets/images/.png');
-// export const =require('../assets/images/.png');
-// export const =require('../assets/images/.png');
-// export const =require('../assets/images/.png');
-// export const =require('../assets/images/.png');
-// export const =require('../assets/images/.png');
-// export const =require('../assets/images/.png');
-// export const =require('../assets/images/.png');
+export const micOff=require('../assets/images/off.png');
+export const groupAdd=require('../assets/images/add-group.png');
+export const cameraSwitch=require('../assets/images/camera.png');
+export const mic=require('../assets/images/microphone.png');
+export const plus=require('../assets/images/plus.png');
+export const videoCall=require('../assets/images/video-call.png');
+export const video=require('../assets/images/video.png');
+export const muteSpeaker=require('../assets/images/mute.png');
+export const speaker=require('../assets/images/speaker.png');
+export const msg=require('../assets/images/msg.png');
+export const msg2=require('../assets/images/msg2.png');
 // export const =require('../assets/images/.png');
 // export const =require('../assets/images/.png');
 // export const =require('../assets/images/.png');

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, Button } from 'react-native';
 import firebase from '../database/firebase';
+import { RF, fonts, HP } from '../utils/contants';
 
 export default class Dashboard extends Component {
   constructor() {
@@ -32,7 +33,7 @@ export default class Dashboard extends Component {
       return(
       <View style={styles.container}>
         <Text style={styles.textStyle}>
-          Hello, {this.state.displayName}
+          Welcome Admin {this.state.displayName}
         </Text>
 
         <Button
@@ -65,13 +66,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     display: "flex",
-    justifyContent: 'center',
+    // justifyContent: 'center',
     alignItems: 'center',
-    padding: 35,
+    paddingTop:HP(5),
+    // padding: 35,
     backgroundColor: '#fff'
   },
   textStyle: {
-    fontSize: 15,
-    marginBottom: 20
+    fontSize: RF(30),
+    fontFamily:fonts.bold,
   }
 });

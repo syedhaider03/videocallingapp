@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, StatusBar } from 'react-native';
-import { colors, SCREEN_WIDTH, headerHeight, menu, fonts, back, RF, WP, cart, bag, bag3, arrowshadow } from '../../utils/contants';
+import { colors, SCREEN_WIDTH, headerHeight, menu, fonts, RF, WP, arrowshadow } from '../../utils/contants';
 import { DrawerActions } from 'react-navigation-drawer';
 import { withNavigation } from 'react-navigation';
 

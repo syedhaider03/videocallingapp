@@ -3,15 +3,21 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import { SCREEN_WIDTH } from "../../utils/contants";
-import { Dashboard } from "../../screens";
+import { Dashboard, Logout } from "../../screens";
+import {Header} from '../../components';
 // import { HomeHeader, Header } from "../../components";
 
 export const appStack = createStackNavigator({
-    Dashboard: Dashboard,
+    Dashboard: {
+    screen:Dashboard,
+    navigationOptions: () => ({
+        headerTitle: "Dashboard",
+    })
+}
 
 }, {
     defaultNavigationOptions: {
-        header: null,
+        header:(props)=> <Header {...props}/>,
 
     },
 
@@ -20,6 +26,7 @@ export const appStack = createStackNavigator({
 
 export const AppDrawer = createDrawerNavigator({
     Home: appStack,
+    // Logout:Logout
 }
     ,
     {

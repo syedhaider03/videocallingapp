@@ -10,8 +10,6 @@ import SideMenu from "../../screens/SideMenu";
 
 export const appStack = createStackNavigator({
     Dashboard: {
-<<<<<<< HEAD
-        screen: Dashboard,
         navigationOptions: () => ({
             headerTitle: "Dashboard",
         }),
@@ -28,35 +26,7 @@ export const appStack = createStackNavigator({
             headerTitle: "Chat",
         })
     }
-=======
-    screen:Dashboard,
-    navigationOptions: () => ({
-        headerTitle: "Dashboard",
-    })
-},
-Chat: {
-    screen:Chat,
-    navigationOptions: () => ({
-        headerTitle: "Chat",
-    })
-}
-
->>>>>>> 3d9c08bd0e23ec341be3cb66fe3ffc2c9956b8e6
 }, {
-    defaultNavigationOptions: {
-        header: (props) => <Header {...props} />,
-    },
-})
-
-
-export const AppDrawer = createDrawerNavigator({
-    Home: appStack,
-    // Logout:Logout
-}
-    ,
-    {
-        contentComponent: props => <SideMenu {...props} />,
-        drawerWidth: SCREEN_WIDTH * 0.68,
         drawerType: 'slide',
         // overlayColor: 'rgba(0,0,0, 0.5)'
         overlayColor: 'transparent'

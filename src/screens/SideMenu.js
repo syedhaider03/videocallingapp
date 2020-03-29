@@ -70,7 +70,7 @@ class SideMenu extends Component {
                 <View style={styles.drawerBody}>
                     <DrawerBody
                         image={home} text={"Home"}
-                        onPress={() => this.props.navigation.navigate('Home')}
+                        onPress={() => this.props.navigation.navigate('Dashboard')}
                         imageStyle={{ width: RF(30), height: RF(30), bottom: 2 }}
                     />
 

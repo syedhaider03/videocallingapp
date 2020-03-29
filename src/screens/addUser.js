@@ -9,18 +9,23 @@ import { Button } from '../components';
 class AddUser extends Component {
 
     state = {
-        userData: ['Ubaid', 'Haider', 'Rafay', 'Anwar', 'Jahangir']
+        userData: []
     }
 
     componentDidMount() {
-        // console.warn(firebaseSDK.database())
-        // httpsCallable()
-        //     .then(res => {
-        //         console.warn('response from firebase ', res)
-        //     })
-        //     .catch(err => {
-        //         console.warn('error from firebase ', err)
-        //     })
+        firebaseSDK.database()
+        .ref('users/')
+        .on("value",user => {
+            console.warn(user.val())
+            let users=[]
+            user.forEach((child) => {
+                users.push(child.val());
+            });
+            console.log(users)
+            this.setState(previousState => ({
+                userData: users
+              }))
+        })
 
     }
 
@@ -33,7 +38,7 @@ class AddUser extends Component {
         return <View style={styles.userRow}>
             <View style={styles.imageTextView}>
                 <Image source={profile} style={styles.userImage} />
-                <Text> {item} </Text>
+                <Text> {item.displayName} </Text>
             </View>
             <TouchableOpacity onPress={() => this.selectUser(item)}
                 style={styles.addUserBtn}>
@@ -44,7 +49,7 @@ class AddUser extends Component {
 
     render() {
         return (
-            <ScrollView>
+            // <ScrollView>
                 <View style={styles.userView}>
                     <View>
                         <Input
@@ -69,7 +74,7 @@ class AddUser extends Component {
                         btnStyle={{ marginTop: 10 }}
                     />
                 </View>
-            </ScrollView>
+            // </ScrollView>
         )
     }
 }

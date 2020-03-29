@@ -40,7 +40,11 @@ export default class Login extends Component {
         })
         this.props.navigation.navigate('Dashboard')
       })
-      .catch(error => this.setState({ errorMessage: error.message }))
+      .catch(error => {
+        this.setState({isLoading:false})
+        alert(error)
+      }
+        )
     }
   }
 

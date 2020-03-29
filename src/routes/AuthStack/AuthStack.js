@@ -1,13 +1,10 @@
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import { Login, Signup, VerifyCode, ForgotPassword, Intro } from '../../screens';
+import { Login, Signup } from '../../screens';
 
 export const authStack = createStackNavigator({
-    Intro,
-    Login,
-    Signup,
-    VerifyCode,
-    ForgotPassword
+Login,
+Signup
 }, {
     defaultNavigationOptions: {
         header: null,

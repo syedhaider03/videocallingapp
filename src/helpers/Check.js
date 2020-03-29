@@ -1,65 +1,35 @@
 import React, { Component } from 'react';
-import { View, ActivityIndicator, Dimensions } from 'react-native';
-import { colors, IS_IOS } from '../utils/contants';
-import { Loader } from '../components';
-import AsyncStorage from '@react-native-community/async-storage';
-// import SplashScreen from 'react-native-smart-splash-screen'
-const { height } = Dimensions.get('screen');
+import { View, ImageBackground } from 'react-native';
+import firebase from '../database/firebase'
+// import { Loader } from '../components';
+import { IS_IOS } from '../utils/contants';
 
-
-export default class Check extends Component {
-    constructor() {
-        super();
-        this.state = {
-            isToken: ''
-        }
-
+class check extends Component {
+    state = {
+        loader: false
     }
     componentDidMount() {
-    // IS_IOS?
-    //    null
-    //      :  SplashScreen.close(
-    //         {
-    //         animationType: SplashScreen.animationType.scale,
-    //     //     // duration: 850,
-    //     //     // delay: 500,
-    //      })
-               // AsyncStorage.removeItem('user')
-        AsyncStorage.getItem('appFirstTimeOpen')
-            .then(res => {
-                if (res == undefined) {
-                    AsyncStorage.setItem('appFirstTimeOpen', 'true')
-                    AsyncStorage.getItem('user')
-                        .then(res => {
-                            if (res == undefined) { }
-                            else
-                                AsyncStorage.removeItem('user')
-                        })
-                }
-            })
-
-        AsyncStorage.getItem("user")
-            .then(res => {
-                console.warn('Token ', res)
-                if (res == null) {
-                    this.setState({ isToken: false }, () => {
-                        console.warn('Erorr', this.state.isToken)
-                    })
-                    this.props.navigation.navigate('Auth')
-                }
-                else {
-                    this.setState({ isToken: true }, () => {
-                        console.warn('Success ', this.state.isToken)
-                    })
-                    this.props.navigation.navigate('App')
-                }
-            })
+        this.setState({ loader: true })
+        this.unsubscribe = firebase.auth().onAuthStateChanged(user => {
+            this.setState({ loader: false })
+            this.props.navigation.navigate(user ? 'Dashboard' : 'Login')
+        })
+        // console.warn(firebase.auth()._user.uid)
+    }
+    componentWillUnmount() {
+        this.unsubscribe();
     }
     render() {
         return (
-            // <View style={{ justifyContent: 'center', alignItems: 'center', height: height / 1.2 }}>
-                <Loader/>
-            // </View>
-        )
+            <View style={{ flex: 1 }}>
+                {/* {IS_IOS ? */}
+                    {/* this.state.loader && <Loader /> */}
+                    {/* // : */}
+                    {/* // <ImageBackground style={{flex:1}} source={require('../assets/splash.png')} /> */}
+                {/* } */}
+            </View>
+        );
     }
 }
+
+export default check;

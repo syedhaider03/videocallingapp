@@ -1,7 +1,6 @@
 import { Dimensions, PixelRatio, Platform, StyleSheet, StatusBar } from 'react-native';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 import { RFValue } from "react-native-responsive-fontsize";
-import i18n, { I18n } from '../translation/i18n';
 import { isIphoneX } from 'react-native-iphone-x-helper';
 import { widthPercentageToDP, heightPercentageToDP } from 'react-native-responsive-screen';
 export const headerHeight = Platform.OS === 'ios' ? 60 : 40;

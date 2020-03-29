@@ -76,6 +76,10 @@ export const msg=require('../assets/images/msg.png');
 export const msg2=require('../assets/images/msg2.png');
 export const menu=require('../assets/images/menublack.png');
 export const arrowshadow=require('../assets/images/arrowshadow.png');
+export const home = require('../assets/images/home.png')
+export const logout = require('../assets/images/logout.png')
+export const profile = require('../assets/images/user.png')
+
 // export const =require('../assets/images/.png');
 // export const =require('../assets/images/.png');
 // export const =require('../assets/images/.png');

@@ -3,25 +3,28 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import { SCREEN_WIDTH } from "../../utils/contants";
-import { Dashboard, Logout } from "../../screens";
-import {Header} from '../../components';
+import { Dashboard, Logout, AddUser } from "../../screens";
+import { Header } from '../../components';
 import SideMenu from "../../screens/SideMenu";
 // import { HomeHeader, Header } from "../../components";
 
 export const appStack = createStackNavigator({
     Dashboard: {
-    screen:Dashboard,
-    navigationOptions: () => ({
-        headerTitle: "Dashboard",
-    })
-}
-
+        screen: Dashboard,
+        navigationOptions: () => ({
+            headerTitle: "Dashboard",
+        }),
+    },
+    AddUser: {
+        screen: AddUser,
+        navigationOptions: () => ({
+            headerTitle: "Add User",
+        })
+    }
 }, {
     defaultNavigationOptions: {
-        header:(props)=> <Header {...props}/>,
-
+        header: (props) => <Header {...props} />,
     },
-
 })
 
 

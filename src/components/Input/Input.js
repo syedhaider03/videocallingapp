@@ -4,7 +4,7 @@ import { RF, fonts, WP, HP, colors, isX } from '../../utils/contants';
 
 const Input = (props) => {
     return (
-        <View style={[styles.container, props.width ? { width: props.width } : null, props.height ? { height: isX() ? props.height - HP(1.5) : props.height } : null]}>
+        <View style={[styles.container, props.width ? { width: props.width } : null, props.height ? { height: isX() ? props.height - HP(1.5) : props.height } : null, props.container]}>
             <Text style={styles.textName}>{props.name}</Text>
             <View style={styles.innerContainer}>
                 <Image source={props.image} style={[styles.imageStyle, props.imageStyle]} />

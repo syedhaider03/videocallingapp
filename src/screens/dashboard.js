@@ -36,6 +36,7 @@ export default class Dashboard extends Component {
           <Button
             width={WP(70)}
             height={50}
+            onPress={() => this.props.navigation.navigate('AddUser')}
             name={"Create A Group"}
           />
           <Btn

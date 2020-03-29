@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, SafeAreaView, Image, Text, TextInput, AsyncStorage, Alert, TouchableOpacity } from 'react-native';
-import { colors, WP, HP, RF, fonts, map, logout, home, loc, setting, shop, weather, fav, profile, warning, senior, groupAdd } from '../utils/contants';
+import { colors, WP, HP, RF, fonts, map, logout, home, loc, setting, shop, weather, fav, profile, warning, senior, groupAdd, chat } from '../utils/contants';
 import { DrawerBody, Loader } from '../components';
 // import { doLogout } from '../../network/network';
 import firebase from '../database/firebase';
@@ -74,11 +74,11 @@ class SideMenu extends Component {
                         imageStyle={{ width: RF(30), height: RF(30), bottom: 2 }}
                     />
 
-                    {/* <DrawerBody
-                        image={loc} text={"My Directions"}
-                        onPress={() => this.props.navigation.navigate('MyDirections')}
-                        imageStyle={{ width: RF(23), height: RF(25), bottom: 2 }}
-                    /> */}
+                    <DrawerBody
+                        image={chat} text={"Chat"}
+                        onPress={() => this.props.navigation.navigate('Chat')}
+                        imageStyle={{ width: RF(25), height: RF(25), bottom: 2 }}
+                    />
                     {/* <DrawerBody
                         image={fav} text={"Favorites"}
                         onPress={() => this.props.navigation.navigate('Favorites')}
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     drawerBody: {
-        flex: 0.13,
+        flex: 0.2,
         marginTop: HP(4),
         // backgroundColor:"",
         justifyContent: 'space-between'

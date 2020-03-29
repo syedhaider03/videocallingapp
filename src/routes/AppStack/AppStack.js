@@ -3,13 +3,14 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import { SCREEN_WIDTH } from "../../utils/contants";
-import { Dashboard, Logout, AddUser } from "../../screens";
+import { Dashboard, Logout, AddUser, Chat  } from "../../screens";
 import { Header } from '../../components';
 import SideMenu from "../../screens/SideMenu";
 // import { HomeHeader, Header } from "../../components";
 
 export const appStack = createStackNavigator({
     Dashboard: {
+<<<<<<< HEAD
         screen: Dashboard,
         navigationOptions: () => ({
             headerTitle: "Dashboard",
@@ -20,7 +21,27 @@ export const appStack = createStackNavigator({
         navigationOptions: () => ({
             headerTitle: "Add User",
         })
+    },
+    Chat: {
+        screen:Chat,
+        navigationOptions: () => ({
+            headerTitle: "Chat",
+        })
     }
+=======
+    screen:Dashboard,
+    navigationOptions: () => ({
+        headerTitle: "Dashboard",
+    })
+},
+Chat: {
+    screen:Chat,
+    navigationOptions: () => ({
+        headerTitle: "Chat",
+    })
+}
+
+>>>>>>> 3d9c08bd0e23ec341be3cb66fe3ffc2c9956b8e6
 }, {
     defaultNavigationOptions: {
         header: (props) => <Header {...props} />,

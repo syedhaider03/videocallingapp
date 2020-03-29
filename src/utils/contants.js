@@ -81,7 +81,7 @@ export const logout = require('../assets/images/logout.png')
 export const profile = require('../assets/images/user.png')
 export const search = require('../assets/images/search.png')
 
-// export const =require('../assets/images/.png');
+export const chat=require('../assets/images/message.png');
 // export const =require('../assets/images/.png');
 // export const =require('../assets/images/.png');
 // export const =require('../assets/images/.png');

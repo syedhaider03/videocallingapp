@@ -4,7 +4,7 @@ import firebase from '../database/firebase'
 import { Loader } from '../components';
 import { IS_IOS } from '../utils/contants';
 
-class check extends Component {
+class Check extends Component {
     state = {
         loader: false
     }
@@ -32,4 +32,4 @@ class check extends Component {
     }
 }
 
-export default check;
+export default Check;
